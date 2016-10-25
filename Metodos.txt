@@ -50,3 +50,25 @@ ObtenerDeterminante2x2
 	| a |
 	a:= ((self ObtenerElemento:1)*(self ObtenerElemento:4))-((self ObtenerElemento:2)*(self ObtenerElemento:3)).
 	^a.
+	
+Producto:Matriz2
+	| m1 n1 m2 n2 an suma a b|
+	m1:=self ObtenerNfilas.
+	n1:=self ObtenerNcols.
+	m2:=Matriz2 ObtenerNfilas.
+	n2:=Matriz2 ObtenerNcols.
+	an:=Array new: (m1*n2).
+	(n1=m2) ifTrue: [  
+			1 to:m1 do: [ :i|
+				1 to:n2 do: [ :j|
+					suma:=0.
+					1 to:n1 do: [ :k|
+						a:=self ObtenerElemento:i y:k.
+						b:=Matriz2 ObtenerElemento:k y:j.
+						suma:=suma+(a*b).
+				 	].
+					an at:((i-1)*Nfilas+j) put:suma.
+				 ]
+			]
+		].
+	^an.
