@@ -1,1 +1,8 @@
 Codigo de Clase
+ObtenerElemento:x
+	^Arreglo at:x.
+  
+inicializar: x Ncol: y Arreglo:Ar
+	Arreglo:= Ar.
+	Nfilas:=x.
+	Ncolumnas:=y.
