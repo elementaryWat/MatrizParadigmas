@@ -29,4 +29,4 @@ ObtenerNfilas
 ^Nfilas.
 
 ObtenerNcols
-^NColumnas.
+^Ncolumnas.
