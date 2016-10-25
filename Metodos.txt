@@ -52,3 +52,11 @@ arr:= Array new: (m1*n1).
 
 ((m1=m2) & (n1=n2)) ifTrue: [1 to: (m1*n1) do:[:i|
 		 arr at:i put: ((a:= self ObtenerElemento: i) + (x:= ObtenerElemento: i))]]^arr
+
+
+ObtenerDeterminante2x2
+	"comment stating purpose of message"
+
+	| a |
+	a:= ((self ObtenerElemento:1)*(self ObtenerElemento:4))-((self ObtenerElemento:2)*(self ObtenerElemento:3)).
+	^a.
