@@ -80,3 +80,13 @@ Producto:Matriz2
 	arr:= Array new: Nfilas*Ncolumnas.
 	1 to: Nfilas*Ncolumnas do: [:i|
 		arr at: i put: ((self ObtenerElemento:i)*x) ]. ^arr.
+		
+		Potencia: x
+
+	|arr mat2 y|
+	mat2:= Matriz new.
+	mat2 inicializar:Nfilas  Ncol:Ncolumnas  Arreglo: Arreglo. 
+	arr:= Array new:Nfilas*Ncolumnas.
+	y:= 1 negated .
+	(x-1) to: 1 by:y do:[:i| arr:= self Producto:mat2.
+		mat2 inicializar: Nfilas Ncol: Ncolumnas  Arreglo: arr ]. ^arr.
