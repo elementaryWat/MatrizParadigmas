@@ -30,3 +30,25 @@ ObtenerNfilas
 
 ObtenerNcols
 ^Ncolumnas.
+
+Suma: x
+
+|arr m1 n1 m2 n2 a |
+m1:= self 
+ObtenerNfila
+^Nfilas.
+
+n1:= self 
+
+ObtenerNcol.
+^NColumnas.
+m2:= self ObtenerNfila
+^Nfilas.
+
+
+n2:= self ObtenerNfila
+^NColumnas.
+arr:= Array new: (m1*n1).
+
+((m1=m2) & (n1=n2)) ifTrue: [1 to: (m1*n1) do:[:i|
+		 arr at:i put: ((a:= self ObtenerElemento: i) + (x:= ObtenerElemento: i))]]^arr
