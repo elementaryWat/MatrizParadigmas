@@ -34,26 +34,16 @@ ObtenerNcols
 Suma: x
 
 |arr m1 n1 m2 n2 a |
-m1:= self 
-ObtenerNfila
-^Nfilas.
-
-n1:= self 
-
-ObtenerNcol.
-^NColumnas.
-m2:= self ObtenerNfila
-^Nfilas.
-
-
-n2:= self ObtenerNfila
-^NColumnas.
+m1:= self ObtenerNfilas.
+n1:= self ObtenerNcols.
+m2:= x ObtenerNfilas.
+n2:= x ObtenerNfilas.
 arr:= Array new: (m1*n1).
 
 ((m1=m2) & (n1=n2)) ifTrue: [1 to: (m1*n1) do:[:i|
-		 arr at:i put: ((a:= self ObtenerElemento: i) + (x:= ObtenerElemento: i))]]^arr
-
-
+		 arr at:i put: (a:= (self ObtenerElemento: i) + (x ObtenerElemento: i))]].^arr.
+		 
+		 
 ObtenerDeterminante2x2
 	"comment stating purpose of message"
 
