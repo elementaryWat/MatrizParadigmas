@@ -6,3 +6,6 @@ inicializar: x Ncol: y Arreglo:Ar
 	Arreglo:= Ar.
 	Nfilas:=x.
 	Ncolumnas:=y.
+ObtenerElemento:x y:y
+|a|
+a := Arreglo at: ((x - 1)* Ncolumnas)+y .
