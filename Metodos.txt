@@ -1,15 +1,29 @@
 Codigo de Clase
+
+Object subclass: #Matriz
+	instanceVariableNames: 'Nfilas Ncolumnas Arreglo'
+	classVariableNames: ''
+	package: 'TMatriz'
+	
 ObtenerElemento:x
 	^Arreglo at:x.
-  
-inicializar: x Ncol: y Arreglo:Ar
-	Arreglo:= Ar.
-	Nfilas:=x.
-	Ncolumnas:=y.
+	
 ObtenerElemento:x y:y
 |a|
 a := Arreglo at: ((x - 1)* Ncolumnas)+y .
 ^a.
+
+inicializar: x Ncol: y
+	|elemento|
+	Arreglo:= Array new:(x*y).
+	Nfilas:=x.
+	Ncolumnas:=y.
+	1 to:(x*y) do: [ :i|  elemento:=(UIManager default request:('Ingrese el elemento ',i asString) initialAnswer: '1') asInteger. Arreglo at:i put:elemento.].
+	
+inicializar: x Ncol: y Arreglo:Ar
+	Arreglo:= Ar.
+	Nfilas:=x.
+	Ncolumnas:=y.
 
 ObtenerNfila
 ^Nfila.
