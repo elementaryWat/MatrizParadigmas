@@ -9,7 +9,7 @@ inicializar: x Ncol: y Arreglo:Ar
 ObtenerElemento:x y:y
 |a|
 a := Arreglo at: ((x - 1)* Ncolumnas)+y .
-
+^a.
 
 ObtenerNfila
 ^Nfila.
