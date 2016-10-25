@@ -72,3 +72,11 @@ Producto:Matriz2
 			]
 		].
 	^an.
+	
+	ProductoEs:x
+	"comment stating purpose of message"
+
+	| arr |
+	arr:= Array new: Nfilas*Ncolumnas.
+	1 to: Nfilas*Ncolumnas do: [:i|
+		arr at: i put: ((self ObtenerElemento:i)*x) ]. ^arr.
