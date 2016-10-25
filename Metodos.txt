@@ -90,3 +90,18 @@ Producto:Matriz2
 	y:= 1 negated .
 	(x-1) to: 1 by:y do:[:i| arr:= self Producto:mat2.
 		mat2 inicializar: Nfilas Ncol: Ncolumnas  Arreglo: arr ]. ^arr.
+		
+		
+		Igualdad: Matriz2
+|n1 m1 n2 m2 C cont1|
+n1:= self ObtenerNcols.
+m1:= self ObtenerNfilas.
+n2:= self ObtenerNcols.
+m2:= self ObtenerNfilas.
+C:= false. cont1:= 0.
+((m1=m2) & (n1=n2))ifTrue: 
+		[ 1 to: (m1*n1) do:[:i| 
+		 	((self ObtenerElemento:i)=(Matriz2 ObtenerElemento:i)) ifTrue: [
+				cont1:= cont1 + 1.
+				].].].
+	(cont1=(m1*n1)) ifTrue: [ C:= true. ].^C.
